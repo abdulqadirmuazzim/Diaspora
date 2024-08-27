@@ -10,7 +10,7 @@ class Contact(models.Model):
     Phone = PNF()
     Address = models.CharField(max_length=300)
     Message = models.TextField()
-    date_created = models.DateTimeField(default=timezone.now())
+    date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.Name

@@ -47,4 +47,4 @@ def contact(req):
 
 # 404 page
 def error(req, execrption):
-    return page_not_found(req, template_name="404.html")
+    return render(req, "404.html", status=404)

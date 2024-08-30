@@ -16,8 +16,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstraprev/bootstrap-rev.min.css" rel="stylesheet">
         <link rel="icon" href="{% static 'img/logo.png' %}">
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/testimonials/testimonial-3/assets/css/testimonial-3.css">
-    
-    
+        <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/projects/project-3/assets/css/project-3.css">
+
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
             integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
@@ -28,7 +28,9 @@
     <div id="head"></div>
     <header class="navigation-wrapper two-column-nav">
         <div class="container navigation-inner">
-            <div class="logo" style="font-size: 35px; font-weight: 600; color: azure;">Diaspora</div>
+            <a href="{% url 'home' %}">
+            <div class="logo" style="font-size: 35px; font-weight: 600; color: #f38f3c;">Diaspora</div>
+        </a>
             <nav class="right-nav xs-nav">
                 <ul class="hover-bottom-left">
                     <li>
@@ -40,7 +42,7 @@
                     <!-- drop down -->
                     <li class="has-sub-nav">
                         <a href="#" class="flex-align">Services <i class="bi bi-caret-down-fill" style="font-size: 10px;"></i></a>
-                        <ul class="sub-list" style="background-color: black;">
+                        <ul class="sub-list" style="background-color: #fff5e8;">
                             <li><a href="#">Accommodation</a></li>
                             <li><a href="#">Consultancy</a></li>
                             <li><a href="#">Welfare</a></li>
@@ -67,7 +69,7 @@
                 <li><a href="{% url 'about' %}">About us</a></li>
                 <li class="has-sub-nav">
                     <a href="#">Services <i class="bi bi-caret-down-fill" style="font-size: 10px;"></i></a>
-                    <ul class="sub-list" style="background-color: black;">
+                    <ul class="sub-list" >
                         <li><a href="#">Accommodation</a></li>
                         <li><a href="#">Consultancy</a></li>
                         <li><a href="#">Welfare</a></li>
@@ -75,7 +77,7 @@
                 </li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
-            <li><a href="#" class="cta-button">Get in touch <i class="bi bi-arrow-right"></i></a></li>
+            <li><a href="#" class="cta-btn rounded-pill">Get in touch <i class="bi bi-arrow-right"></i></a></li>
 
         </div>
     </div>
@@ -85,7 +87,7 @@
     {% endblock  %}
     
     <div class="back-top">
-        <a href="#head"><button class="btn btn-primary"> <i class="bi bi-arrow-up"></i></button></a>
+        <a href="#head"><button class="btn btn-warning"> <i class="bi bi-arrow-up"></i></button></a>
     </div>
     <footer>
         <section class="footer pt-5 pb-5">
@@ -200,13 +202,13 @@
         delay: 200,
     })
 
-    reveal1.reveal('.div-header, .bottom, .map', { delay: 750 });
+    reveal1.reveal('.bottom, .map', { delay: 750 });
     reveal1.reveal('.right-only', { delay: 400, origin: 'right' });
     reveal1.reveal('.left-only', { delay: 500, origin: 'left' });
     // with interval
     reveal1.reveal('.input, .left-int', { origin: 'left', interval: 150 });
     reveal1.reveal('.thebtn, .right-int', { origin: 'right', interval: 150 });
-    reveal1.reveal('.choose-us-item, .bottom-int', { origin: 'bottom', interval: 150 });
+    reveal1.reveal('.bottom-int', { origin: 'bottom', interval: 150 });
 
     const reveal2 = ScrollReveal({
         reset: false,

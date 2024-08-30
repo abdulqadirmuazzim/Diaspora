@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("django_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
+DEBUG = True
+# ["127.0.0.1", ".vercel.app"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,6 +129,7 @@ STATIC_ROOT = "static2/"
 STATICFILES_DIRS = [
     (os.path.join(BASE_DIR, "static")),
 ]
+PHONENUMBER_DB_FORMAT = "E164"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

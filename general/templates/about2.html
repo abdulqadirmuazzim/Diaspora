@@ -5,27 +5,31 @@
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/tutorials/timelines/timeline-3/assets/css/timeline-3.css">
 
+<div class="bgimage half">
+  <img src="{% static 'img/diasporabg.jpg' %}" alt="hero image">
+</div>
+
+<div class="dark half"></div>
 <section class="about-hero">
-  <h1 style="z-index: 5;" class="zoom-out">About us</h1>
-  <div class="shapedividers_com-3141"></div>
+  <h1 style="z-index: 5;" class="zoom-out title">About us</h1>
 </section>
 
 <!-- Mission -->
 <section class="py-3 py-md-5">
     <div class="container">
       <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
-        <div class="col-12 col-lg-6 col-xl-5 zoom-out">
-          <img class="img-fluid rounded bottom" loading="lazy" src="{% static 'img/building.jpg' %}" alt="About 1">
+        <div class="col-12 col-lg-6 col-xl-5">
+          <img class="img-fluid rounded" loading="lazy" src="{% static 'img/about.jpg' %}" alt="About 1">
         </div>
         <div class="col-12 col-lg-6 col-xl-7">
           <div class="row justify-content-xl-center">
             <div class="col-12 col-xl-11">
-              <h2 class="mb-3 bottom">Our mission</h2>
-              <p class="lead fs-4 text-secondary2 mb-3 left-only">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
-              <p class="mb-5 left-only">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.</p>
+              <h2 class="mb-3">Our mission</h2>
+              <p class="lead fs-4 text-secondary2 mb-3">We help people to build incredible brands and superior products. Our perspective is to furnish outstanding captivating services.</p>
+              <p class="mb-5">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our products and services.</p>
               <div class="row gy-4 gy-md-0 gx-xxl-5X">
                 <div class="col-12 col-md-6">
-                  <div class="d-flex bottom">
+                  <div class="d-flex">
                     <div class="me-4 text-primary">
                       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
                         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
@@ -65,7 +69,7 @@
       <div class="col-10 col-md-12 col-xl-10 col-xxl-9">
 
         <ul class="timeline">
-          <li class="timeline-item left left-only">
+          <li class="timeline-item left">
             <div class="timeline-body">
               <div class="timeline-content timeline-indicator">
                 <div class="card border-0 shadow">
@@ -78,7 +82,7 @@
               </div>
             </div>
           </li>
-          <li class="timeline-item right right-only">
+          <li class="timeline-item right">
             <div class="timeline-body">
               <div class="timeline-content timeline-indicator">
                 <div class="card border-0 shadow">
@@ -91,7 +95,7 @@
               </div>
             </div>
           </li>
-          <li class="timeline-item left left-only">
+          <li class="timeline-item left">
             <div class="timeline-body">
               <div class="timeline-content timeline-indicator">
                 <div class="card border-0 shadow">
@@ -104,7 +108,7 @@
               </div>
             </div>
           </li>
-          <li class="timeline-item right right-only">
+          <li class="timeline-item right">
             <div class="timeline-body">
               <div class="timeline-content timeline-indicator">
                 <div class="card border-0 shadow">
@@ -139,7 +143,7 @@
     <!-- pagination="true" pagination-clickable="true" init="false"   -->
     
     
-    <div class="container overflow-hidden zoom-out">
+    <div class="container overflow-hidden">
         <div class="row gy-4 gy-lg-0">
         <swiper-container class="mySwiper" init="false" autoplay-delay="3000" space-between="15" autoplay-disable-on-interaction="false">
       

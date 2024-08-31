@@ -1,12 +1,22 @@
 from django.shortcuts import render, redirect
 from django.views.defaults import page_not_found
 from .form import ContactForm, SubForm
+from django.contrib import messages
 
 # Create your views here.
 
 
 # home page
 def home(req):
+    if req.method == "POST":
+        form = SubForm(req.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(req, "You have successfully subscribe")
+            return redirect("home")
+        else:
+            messages.error(req, "An error accured")
+            return redirect("home")
     return render(req, "Home.html")
 
 
@@ -46,5 +56,5 @@ def contact(req):
 
 
 # 404 page
-def error(req, execrption):
+def error(req, exception):
     return render(req, "404.html", status=404)

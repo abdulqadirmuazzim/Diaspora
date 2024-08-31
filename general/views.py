@@ -21,8 +21,6 @@ def home(req):
 
 
 # about page
-def about(req):
-    return render(req, "about2.html")
 
 
 # contact page
@@ -56,5 +54,20 @@ def contact(req):
 
 
 # 404 page
-def error(req, exception):
+def error_404(req, excption):
     return render(req, "404.html", status=404)
+
+
+# 403 page
+def error_403(req, exception):
+    return render(req, "403.html", status=403)
+
+
+# 400 page
+def error_400(req, exception):
+    return render(req, "400.html", status=400)
+
+
+# 500 page
+def error_500(req):
+    return render(req, "500.html", status=500)

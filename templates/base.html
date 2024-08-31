@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
         <link href="https://cdn.jsdelivr.net/npm/bootstraprev/bootstrap-rev.min.css" rel="stylesheet">
-        <link rel="icon" href="{% static 'img/logo.png' %}">
+        <link rel="icon" href="{% static 'img/logo-light.png' %}">
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/testimonials/testimonial-3/assets/css/testimonial-3.css">
         <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/projects/project-3/assets/css/project-3.css">
 
@@ -28,7 +28,7 @@
     <header class="navigation-wrapper two-column-nav">
         <div class="container navigation-inner">
             <a href="{% url 'home' %}">
-            <div class="logo" style="font-size: 35px; font-weight: 600; color: #f38f3c;">Diaspora</div>
+            <div class="logo"><img src="{% static 'img/logo.png' %}" alt=""></div>
         </a>
             <nav class="right-nav xs-nav">
                 <ul class="hover-bottom-left">
@@ -94,8 +94,9 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="thumb pr-5 mb-4" >
-                            <h3>Diaspora Logo here</h3>
-                            <!-- <img src="https://www.bootstraprev.com/img/logo-h-w.svg" alt="" class="img-fluid"> -->
+                            <!-- <div class="logo"><img src="" alt=""></div> -->
+
+                            <img src="{% static 'img/logo-light.png' %}" alt="Diaspora logo" style="width: auto; height: 70px;" class="img-fuid">
                         </div>
                         <p class="fs-7 light-text-4">
                             © 2020 Diaspora Synergy Limited. All rights reserved

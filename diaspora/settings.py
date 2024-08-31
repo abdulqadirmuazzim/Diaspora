@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("django_key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", "diasporasynergy.com"]
 
 
 # Application definition
@@ -82,9 +82,17 @@ WSGI_APPLICATION = "diaspora.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "postgres",
+        "USER": "postgres.hbeoyalsfhfieetawmxp",
+        "PASSWORD": os.environ.get("database_pass"),
+        "HOST": "aws-0-eu-central-1.pooler.supabase.com",
+        "PORT": "6543",
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # }
 }
 
 

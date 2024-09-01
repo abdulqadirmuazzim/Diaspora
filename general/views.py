@@ -71,3 +71,8 @@ def error_400(req, exception):
 # 500 page
 def error_500(req):
     return render(req, "500.html", status=500)
+
+
+# Zoho verification
+def zoho_verify(req):
+    return render(req, "zohoverify/verifyforzoho.html")

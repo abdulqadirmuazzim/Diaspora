@@ -6,8 +6,14 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your views here.
+
+
+# get the list of all staff
+staff = User.objects.filter(is_staff=True)
+staff_emails = [user.email for user in staff]
 
 
 # home page
@@ -16,11 +22,20 @@ def home(req):
         form = SubForm(req.POST)
         if form.is_valid():
             email = form.cleaned_data["SubEmail"]
+            # send the user an email
             send_mail(
                 "User Subscribed",
                 f"Dear {email},\nThank you for subscribing to our news letter!",
                 settings.EMAIL_HOST_USER,
                 [email],
+                fail_silently=False,
+            )
+            # send the staff an email
+            send_mail(
+                "Diasporia site",
+                f"A user with email ({email}) has just subscribed to Diaspora news letter",
+                settings.EMAIL_HOST_USER,
+                staff_emails,
                 fail_silently=False,
             )
             form.save()
@@ -39,21 +54,40 @@ def home(req):
 def contact(req):
     if req.method == "POST":
         form = ContactForm(req.POST)
+
         name = req.POST["Name"]
         email = req.POST["Email"]
         phone = req.POST["Phone"]
         address = req.POST["Address"]
         message = req.POST["Message"]
+        # if form is valid
         if form.is_valid():
+            # save the form
             form.save()
-            time = Contact.objects.get(Email=email)
+            # send an email to user
             send_mail(
                 "Thanks for reaching out",
-                f"Dear {name},\nThanks for reaching out to us\n{time.date_created}",
+                f"Dear {name},\nThanks for reaching out to us.",
                 settings.EMAIL_HOST_USER,
                 [email],
                 fail_silently=False,
             )
+            # send an email to all staff
+            send_mail(
+                "Diasporia site",
+                f"""
+A user his just filled the contact form:\n
+Name: {name},
+Email: {email},
+Phone: {phone},
+Address: {address},
+Message: {message},
+                """,
+                settings.EMAIL_HOST_USER,
+                staff_emails,
+                fail_silently=False,
+            )
+
             messages.success(req, "Thanks for keeping in touch!")
             return redirect("home")
         else:

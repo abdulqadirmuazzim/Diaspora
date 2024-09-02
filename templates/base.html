@@ -78,12 +78,22 @@
         </div>
     </div>
     </header>
+
     {% block content %}
     
     {% endblock  %}
-    
-    <div class="back-top">
-        <a href="#head"><button class="btn btn-warning"> <i class="bi bi-arrow-up"></i></button></a>
+    <div class="bottom sticky-bottom">
+        <div class="back-top">
+            <a href="#head"><button class="btn btn-warning"> <i class="bi bi-arrow-up"></i></button></a>
+        </div>
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert {{message.tags}} alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
     </div>
     <footer>
         <section class="footer pt-5 pb-5">
